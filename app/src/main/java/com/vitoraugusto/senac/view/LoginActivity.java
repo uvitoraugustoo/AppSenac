@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.vitoraugusto.senac.R;
 import com.vitoraugusto.senac.controller.DbController;
+import com.vitoraugusto.senac.controller.SharedController;
 import com.vitoraugusto.senac.model.Pessoa;
 
 public class LoginActivity extends AppCompatActivity {
@@ -21,18 +22,20 @@ public class LoginActivity extends AppCompatActivity {
     private ImageView olhoSenha;
     private boolean senhaVisivel = false;
     private DbController dbController;
-
+private SharedController sharedController;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        sharedController = new SharedController(this);
         cpf = findViewById(R.id.cpf);
         senha = findViewById(R.id.senha);
-        btnLogin = findViewById(R.id.realizarC); // esse botão agora é de login
+        btnLogin = findViewById(R.id.realizarC);
         olhoSenha = findViewById(R.id.olhoSenha);
         dbController = new DbController(this);
+
+        carregarDados();
 
         btnLogin.setOnClickListener(v -> {
             String cp = cpf.getText().toString().trim();
@@ -43,12 +46,11 @@ public class LoginActivity extends AppCompatActivity {
             } else if (cp.length() != 11) {
                 Toast.makeText(this, "CPF inválido. Deve conter 11 números.", Toast.LENGTH_SHORT).show();
             } else {
-                // Verifica se existe essa pessoa no banco
+
                 Pessoa pessoa = dbController.validarLogin(cp, senh);
                 if (pessoa != null) {
                     Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show();
-
-                    // Envia os dados para a MainActivity
+                    sharedController.salvarDados(pessoa.getNome(), pessoa.getCpf(), senh, pessoa.getRa(), pessoa.getTurno());
                     Intent intent = new Intent(this, MainActivity.class);
                     intent.putExtra("nome", pessoa.getNome());
                     intent.putExtra("cpf", pessoa.getCpf());
@@ -61,7 +63,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
         olhoSenha.setOnClickListener(v -> {
             if (senhaVisivel) {
                 senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
@@ -74,5 +75,9 @@ public class LoginActivity extends AppCompatActivity {
             }
             senha.setSelection(senha.getText().length());
         });
+    }
+    private void carregarDados() {
+        cpf.setText(sharedController.getCpf());
+        senha.setText(sharedController.getSenha());
     }
 }

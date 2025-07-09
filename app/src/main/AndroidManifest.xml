@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Senac"
         tools:targetApi="31">
+        <activity android:name=".view.FrequenciaActivity"/>
         <activity android:name=".view.RegisterActivity"/>
         <activity android:name=".view.LoginActivity"/>
         <activity
