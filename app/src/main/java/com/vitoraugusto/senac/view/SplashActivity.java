@@ -26,7 +26,7 @@ public class SplashActivity extends AppCompatActivity {
             new Handler().postDelayed(() -> {
 
                 imageLogo.animate().alpha(0f).setDuration(500).withEndAction(() -> {
-                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    startActivity(new Intent(SplashActivity.this, RegisterActivity.class));
                     finish();
                 });
             }, 2000);

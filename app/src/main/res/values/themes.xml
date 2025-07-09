@@ -2,5 +2,10 @@
     <style name="Theme.Senac" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:navigationBarColor">@color/white</item>
+
+
+        <item name="colorControlActivated">#183163</item>
+        <item name="colorControlNormal">#183163</item>
+        <item name="colorAccent">#183163</item>
     </style>
 </resources>

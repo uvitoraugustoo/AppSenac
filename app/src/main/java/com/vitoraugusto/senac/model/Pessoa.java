@@ -6,25 +6,21 @@ import android.widget.EditText;
 
 public class Pessoa {
     private String nome;
+
     private String cpf;
-    private String email;
+
     private String senha;
 
-    public Pessoa(){
+    private String ra;
+            private String turno;
 
-    }
-    public Pessoa(String nome, String email, String senha, String cpf) {
+    public Pessoa(String nome, String cpf, String senha, String ra, String turno) {
         this.nome = nome;
         this.cpf = cpf;
-        this.email = email;
         this.senha = senha;
+        this.ra = ra;
+        this.turno = turno;
     }
-
-    public Pessoa(String email, String senha) {
-        this.email = email;
-        this.senha = senha;
-    }
-
 
     public String getNome() {
         return nome;
@@ -34,22 +30,48 @@ public class Pessoa {
         this.nome = nome;
     }
 
-
-
-    public String getEmail() {
-        return email;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getRa() {
+        return ra;
     }
+
+    public void setRa(String ra) {
+        this.ra = ra;
+    }
+
+    public String getTurno() {
+        return turno;
+    }
+
+    public void setTurno(String turno) {
+        this.turno = turno;
+    }
+
+    public Pessoa(){
+
+    }
+
+    public Pessoa(String cpf, String senha) {
+   this.cpf = cpf;
+        this.senha = senha;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     public String getCpf() {
         return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 
     public String getSenha() {

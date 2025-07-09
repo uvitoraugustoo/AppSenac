@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    >
+
+    <TextView
+        android:id="@+id/tvNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nome do Usuário"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCpf"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="CPF: 000.000.000-00"
+        android:textSize="16sp"
+        android:textColor="#444"
+        app:layout_constraintTop_toBottomOf="@id/tvNome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tvRa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="RA: 000000"
+        android:textSize="16sp"
+        android:textColor="#444"
+        app:layout_constraintTop_toBottomOf="@id/tvCpf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/tvTurno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Turno: Manhã"
+        android:textSize="16sp"
+        android:textColor="#444"
+        app:layout_constraintTop_toBottomOf="@id/tvRa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
