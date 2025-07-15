@@ -80,27 +80,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.681" />
-
-    <EditText
-        android:id="@+id/turno"
-        android:layout_width="254dp"
-        android:layout_height="44dp"
-        android:background="@drawable/edit_text_borda"
-        android:elevation="4dp"
-        android:ems="10"
-        android:hint="TURNO"
-        android:inputType="text"
-        android:shadowColor="#183163"
-        android:textColor="#183163"
-        android:textColorHighlight="#183163"
-        android:textColorHint="#999999"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77" />
+        app:layout_constraintVertical_bias="0.694" />
 
     <Button
         android:id="@+id/realizarC"
@@ -155,19 +135,6 @@
         app:srcCompat="@drawable/outline_face_24" />
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="25dp"
-        android:layout_height="28dp"
-        android:layout_marginEnd="12dp"
-
-        android:elevation="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/turno"
-        app:layout_constraintEnd_toEndOf="@+id/turno"
-        app:layout_constraintTop_toTopOf="@+id/turno"
-        app:layout_constraintVertical_bias="0.437"
-        app:srcCompat="@drawable/outline_face_24" />
-
-    <ImageView
         android:id="@+id/imageView2"
         android:layout_width="25dp"
         android:layout_height="28dp"
@@ -188,6 +155,20 @@
         app:layout_constraintTop_toTopOf="@+id/senha"
         app:layout_constraintVertical_bias="0.55"
         app:srcCompat="@drawable/olho_senha" />
+
+    <Spinner
+
+        android:id="@+id/turno"
+        android:layout_width="254dp"
+        android:layout_height="44dp"
+        android:background="@drawable/edit_text_borda"
+        android:textColorHint="#999999"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.788" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
